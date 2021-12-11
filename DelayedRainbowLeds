@@ -1,0 +1,74 @@
+/*
+
+This sketch was created to better understand how to control various LEDs using an Arduino Uno.
+
+It will run through 6 LEDs of various colours, turning them on one by one with a second delay before doing so. Will move down in a gradual motion, turning the previous
+LED off after the current LED has been turned on, creating a delayed effect.
+
+*/
+
+//Setting up the variables and assigning them to a specific pin (digital/PWM pin)
+
+const int blueLedPin = 8;
+const int redLedPin = 9;
+const int pinkLedPin = 10;
+const int yellowLedPin = 11;
+const int greenLedPin = 12; 
+const int whiteLedPin = 13; 
+
+
+// The setup routine runs once reset is pressed
+
+void setup() {
+
+// This is in all arduino programs as a "this stuff will be used" section
+
+//This is telling it that it will be outputting information to these pins versus inputting the information
+pinMode(blueLedPin,OUTPUT);
+pinMode(redLedPin,OUTPUT);
+pinMode(pinkLedPin,OUTPUT);
+pinMode(yellowLedPin,OUTPUT);
+pinMode(greenLedPin,OUTPUT);
+pinMode(whiteLedPin,OUTPUT);
+
+// This will tell it that it will output information to each pin. 
+
+}
+
+
+// The following loop routine runs over and over again forever:
+
+void loop() {
+
+ //This is the actual code that it will loop over. (All LEDS will be on for a second and then off, going down in order from blue -> red -> pink -> yellow -> green -> white)
+
+  digitalWrite(blueLedPin, HIGH);   // turn the LED on (HIGH is the voltage level)
+  delay(100);                       // turn the LED off by making the voltage LOW
+  digitalWrite(whiteLedPin, LOW);
+  delay(1000);                       // wait for a second  
+
+  digitalWrite(redLedPin, HIGH);     // turn the LED on (HIGH is the voltage level)
+  delay(100);                        // turn the LED off by making the voltage LOW
+  digitalWrite(blueLedPin, LOW);
+  delay(1000);                       // wait for a second
+
+  digitalWrite(pinkLedPin, HIGH);   // turn the LED on (HIGH is the voltage level)
+  delay(100);                       // turn the LED off by making the voltage LOW
+  digitalWrite(redLedPin, LOW);
+  delay(1000);                       // wait for a second
+
+  digitalWrite(yellowLedPin, HIGH);   // turn the LED on (HIGH is the voltage level)
+  delay(100);                         // turn the LED off by making the voltage LOW
+  digitalWrite(pinkLedPin, LOW);
+  delay(1000);                       // wait for a second
+
+  digitalWrite(greenLedPin, HIGH);   // turn the LED on (HIGH is the voltage level)
+  delay(100);                        // turn the LED off by making the voltage LOW
+  digitalWrite(yellowLedPin, LOW);
+  delay(1000);                       // wait for a second
+
+  digitalWrite(whiteLedPin, HIGH);   // turn the LED on (HIGH is the voltage level)
+  delay(100);                        // turn the LED off by making the voltage LOW
+  digitalWrite(greenLedPin, LOW);
+  delay(1000);                       // wait for a second
+}
